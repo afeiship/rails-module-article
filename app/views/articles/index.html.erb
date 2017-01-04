@@ -1,0 +1,27 @@
+<h1>Articles#index</h1>
+<p>Find me in app/views/articles/index.html.erb</p>
+
+<%= @articles.inspect %>
+<hr>
+<% @articles.each do |item| %>
+    <p>
+      <strong>Title:</strong>
+      <%= item.title %>
+    </p>
+    <p>
+      <strong>Text:</strong>
+      <%= item.text %>
+    </p>
+    <p>
+      <strong>Created at:</strong><%= item.created_at %>
+      <strong>Updated at:</strong><%= item.updated_at %>
+    </p>
+    <p>
+      <strong>Actions:</strong>
+      <span>
+        <a href="<%=articles_path('articles#edit') %>/">Edit</a>
+        <a href="#">Show</a>
+        <a href="#">Delete</a>
+      </span>
+    </p>
+<% end %>
