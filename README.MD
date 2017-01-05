@@ -33,3 +33,9 @@ edit_article GET    /articles/:id/edit(.:format) articles#edit
              DELETE /articles/:id(.:format)      articles#destroy
         root GET    /                            welcome#index
 ```
+
+
+## rubymine:
++ ctrl + alt + r [Run server]
++ alt + r [rake:task]
++ alt + cmd + g [generate ctrl/model]

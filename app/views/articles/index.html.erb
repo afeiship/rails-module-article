@@ -2,6 +2,9 @@
 <p>Find me in app/views/articles/index.html.erb</p>
 
 <%= @articles.inspect %>
+<p>
+  <%= link_to 'Create', new_article_path %>
+</p>
 <hr>
 <% @articles.each do |item| %>
     <p>
@@ -19,9 +22,10 @@
     <p>
       <strong>Actions:</strong>
       <span>
-        <a href="<%=articles_path('articles#edit') %>/">Edit</a>
-        <a href="#">Show</a>
-        <a href="#">Delete</a>
+        <%= link_to 'Show', article_path(item) %>
+        <%= link_to 'Edit', edit_article_path(item) %>
+        <%= link_to 'Destroy', article_path(item),
+                    method: :delete, data: { confirm: 'Are you sure?' } %>
       </span>
     </p>
 <% end %>
